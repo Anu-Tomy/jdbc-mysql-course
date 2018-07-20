@@ -20,7 +20,7 @@ public class CreateTableWithYahoo {
 	    PreparedStatement pstmt = null;
 	    Connection conn = null;
 	    try {
-	      StringBuffer sql = new StringBuffer("CREATE TABLE stocks(");
+	      StringBuffer sql = new StringBuffer("CREATE TABLE stocksTest(");
 	      sql.append("rowNumber			INTEGER, ");
 	      sql.append("symbol			VARCHAR(6), ");
 	      sql.append("name				VARCHAR(25), ");
