@@ -26,12 +26,12 @@ public class CreateTableWithYahoo {
 	      sql.append("name				VARCHAR(25), ");
 	      sql.append("price				DOUBLE PRECISION, ");
 	      sql.append("chang				DECIMAL(3,2), ");
-	      sql.append("percentChang		DECIMAL(3,3), ");
+	      sql.append("percentChang			DECIMAL(3,3), ");
 	      sql.append("volum				VARCHAR(12), ");    
 	      sql.append("avgVol			VARCHAR(10), ");
 	      sql.append("marketCap			DOUBLE PRECISION, ");
 	      sql.append("peRatio			VARCHAR(10), "); 
-	      sql.append("fiftTwoWkRange	DOUBLE PRECISION)");
+	      sql.append("fiftTwoWkRange		DOUBLE PRECISION)");
 
 	      
 	      conn = getConnection();
