@@ -8,9 +8,9 @@ public class CreateTableWithYahoo {
 
 	public static Connection getConnection() throws Exception {
 	    String driver = "com.mysql.jdbc.Driver";
-	    String url = "jdbc:mysql://localhost:3306/demo?useSSL=false";
-	    String username = "student";
-	    String password = "student";
+	    String url = "jdbc:mysql://localhost:3306/yahoo_finance_scraper?useSSL=false";
+	    String username = "yahoo";
+	    String password = "yahoo";
 	    Class.forName(driver);
 	    Connection conn = DriverManager.getConnection(url, username, password);
 	    return conn;
@@ -20,14 +20,19 @@ public class CreateTableWithYahoo {
 	    PreparedStatement pstmt = null;
 	    Connection conn = null;
 	    try {
-	      StringBuffer sql = new StringBuffer("CREATE TABLE tableWithAllTypesTestPass(");
-	      sql.append("rowNumber            INTEGER, ");              
-	      sql.append("symbol               VARCHAR(254), ");        // String
-	      sql.append("name	               VARCHAR(254), ");
-	      sql.append("price			       DOUBLE PRECISION, ");    // Double
-	      sql.append("percentChange        VARCHAR(254), ");		// String
-	      sql.append("avgVolume            VARCHAR(254), ");       
-	      sql.append("marketCap			   DOUBLE PRECISION)");    // Double
+	      StringBuffer sql = new StringBuffer("CREATE TABLE stocks(");
+	      sql.append("rowNumber				INTEGER, ");
+	      sql.append("symbol				VARCHAR(6), ");
+	      sql.append("name					VARCHAR(25), ");
+	      sql.append("price		            DOUBLE PRECISION, ");
+	      sql.append("chang					DECIMAL(3,2), ");
+	      sql.append("percentChang			DECIMAL(3,3), ");
+	      sql.append("volum					VARCHAR(12), ");    
+	      sql.append("avgVol				VARCHAR(10), ");
+	      sql.append("marketCap				DOUBLE PRECISION, ");
+	      sql.append("peRatio				VARCHAR(10), "); 
+	      sql.append("fiftTwoWkRange        DOUBLE PRECISION)");
+
 	      
 	      conn = getConnection();
 	      pstmt = conn.prepareStatement(sql.toString());
